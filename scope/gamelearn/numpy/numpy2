@@ -1,0 +1,163 @@
+import numpy as np
+from scipy import stats
+import matplotlib.pyplot as plt
+import random
+import pandas as pd
+from sklearn import linear_model
+from  sklearn.preprocessing import  StandardScaler
+from sklearn import tree
+from sklearn.metrics import r2_score
+from sklearn.tree import DecisionTreeClassifier
+from sklearn import metrics
+from sklearn.metrics import confusion_matrix
+from scipy.cluster.hierarchy import dendrogram, linkage
+from sklearn.cluster import AgglomerativeClustering
+df=pd.read_csv(r"C:\pythoncode\scope\gamelearn\numpy\Kitap.csv")
+d={'uk':1,'us':2,'n':0}
+df['nationality']=df['nationality'].map(d)
+d={"yes":1,"NO":0}
+df['Go']=df['Go'].map(d)
+features=['age','experience','rank','nationality']
+x=df[features]
+y=df['Go']
+dttree=DecisionTreeClassifier()
+dttree.fit(x,y)
+tree.plot_tree(dttree,feature_names=features)
+print(dttree.predict([40,10,6,1]))
+
+
+
+# gercek=np.random.binomial(1,0.5,100)
+# tahmin=np.random.binomial(1,0.5,100)
+# matrix=metrics.confusion_matrix(gercek,tahmin)
+# screen=metrics.ConfusionMatrixDisplay(confusion_matrix=matrix,display_labels=[False,True])
+# trulya=metrics.accuracy_score(gercek,tahmin)
+# trulyb=metrics.precision_score(gercek,tahmin)
+# trulyc=metrics.recall_score(gercek,tahmin)
+# trulyd=metrics.recall_score(gercek,tahmin,pos_label=1)
+# fpuan=metrics.f1_score(gercek,tahmin)
+# print(fpuan)
+# screen.plot()
+# print(trulyb)
+# print(trulyc)
+# print(trulyd)
+# x=[23,45,65,76,89,34,24,12,13,21,44,66,87]
+# y=[1,7,9,8,2,5,9,6,4,3,7,5,6]
+# y=[4,5,6,7,8,9,10,11,12,13,14,15]
+# x=[16,32,64,128,256,512,1024,2048,4096,5192,10384,20768]
+
+# veri=list(zip(x,y))
+# ornek=linkage(veri,method='ward',metric='euclidean')
+# dendrogram(ornek)
+# plt.scatter(x,y,label=1)
+# plt.show()
+# clusters=AgglomerativeClustering(ornek,n_clusters=2)
+# print(clusters)
+
+#plt.show()
+# print(x)
+# print(y)
+
+# scale=StandardScaler()#verileri standartlastirmak icin kullanilri
+# df=pd.read_csv(r"C:\Users\mami\OneDrive\Masaüstü\apt_dly_2014.csv")
+# a=['YEAR'=2014,'MONTH_NUM'=1,'FLT_ARR_1'=1]
+
+
+# # x=np.array[['MONTH_NUM','YEAR']]
+# # y=[['ATFM_VERSION','API_ICAO']]
+# regr=linear_model.LinearRegression()
+# #regr.fit(x,y)
+# print(regr.coef_)#lineer regresyon modelinin katsayılarını yazdırmaya çalışıyor
+# x=np.random.normal(3,1,100)
+# y=np.random.normal(150,40,100)/x
+# a=np.poly1d(np.polyfit(x,y,4))
+# education_x=x[:80]
+# education_y=y[:80]
+# line=np.linespace(0,6,100)
+# plt.scatter(education_x,education_y)
+# plt.scatter(x,y)
+
+
+# plt.show()
+# model=np.poly1d(np.polyfit(x,y,100)
+
+# plt.scatter(egitim_x,egitim_x)
+
+# plt.plot(line,model(line))
+
+# plt.plot()
+
+# line=np.linespace(0,6,100)
+
+# plt.scatter(test_x,test_y)
+# print(np.median(arr))
+# print(np.mean(arr))
+# print(stats.mode(arr))
+#boyunca veri dizisinin yüzdelik değerlerini hesaplar. Yüzdelik değerler, veri dağılımının belirli bir yüzdesinin altında kalan değerleri gösteren istatistiksel bir terimdir. Yüzdelik değerler, dizideki elemanların sıralanmış bir kopyasında belirli bir noktada bulunan değerler olarak tanımlanır1. Bu fonksiyon, girdi dizisini varsayılan olarak düzleştirerek veya belirtilen eksen üzerinde yüzdelik değerler alarak çalışır.
+#arr=np.array([21,34,56,67,98,33,55,66,68])
+
+# df=pd.read_csv("air.csv")
+# print(df)
+# x=df["Bonanza","Sierra"]
+# y=df["Global","Challenger"]
+# regr=linear_model.LinearRegression()
+# regr.fit(x,y)
+# print(regr.coef_)
+
+# x=np.array([1,2,3,4,5,6,7,8,9,10,343,56,56,23,56,787,98,23,445,112])
+# y=np.array([1,8,27,64,125,216,343,544,729,1000,1121,1444,1669,1625,1789,1864,1991,40000,5555,7878])
+# slope,intercept,r,p,std_err=stats.linregress(x,y)
+# def func(x):
+#         return slope*x+intercept
+# model=list(map(func,x))
+# x=np.array([1,2,3,4,5,6,7,8,9,10,343,56,56,23,56,787,98,23,445,112])
+# y=np.array([1,8,27,64,125,216,343,544,729,1000,1121,1444,1669,1625,1789,1864,1991,40000,5555,7878])
+# model=np.poly1d(np.polyfit(x,y,3))
+# line=np.linspace(1,56,544)
+# plt.plot(line,model(line))
+# plt.scatter(x,y)
+# plt.show()
+# df=pd.read_csv("air.csv")
+# regr=linear_model.LinearRegression()
+# x=[df["Bonanza", "Sierra"]]
+# y=[df["Global", "Challenger"]]
+# print(regr.coef_)
+
+# # plt.scatter(x,y)
+# plt.plot(x,model)
+# plt.show()
+# x=np.random.uniform(0.0,5.0,1000)
+# #x=np.random.normal(0.0,5.0,1000)
+# plt.hist(x,100)
+# plt.show()
+# print(np.std(arr))
+# print(np.var(arr))
+#random.uniform metodu, Python’da bir random modülü fonksiyonudur. Bu fonksiyon, belirtilen aralıkta rastgele bir ondalık sayı üretir. Bu fonksiyon
+# plt.hist metodu, numpy.histogram fonksiyonunu kullanarak veri dizisini gruplara ayırır ve her gruptaki değer sayısını sayar, ardından dağılımı bir BarContainer veya Polygon olarak çizer2. bins, range, density ve weights parametreleri numpy.histogram fonksiyonuna aktarılır2.
+# , [a, b) aralığında (a dahil, b hariç) eşit olasılıkla bir sayı döndürür. Yani, verilen aralıktaki herhangi bir değer uniform metodu tarafından çekilme olasılığına sahiptir
+#print(np.percentile(arr,75))
+#print(np.percentile(arr,25))
+#y=np.random.uniform(1.0,1.5,1000)
+# u=np.random.normal(0.5,1.5,1000)
+# plt.hist(u,bins=75)
+# x=np.array([1,2,3,4,5,6,7,8,9,10])
+# y=np.array([1,8,27,64,125,216,343,544,729,1000])
+# x=np.random.normal(0.5,1.0,1000)
+# y=np.random.normal(1.0,1.5,1000)
+
+# #plt.plot(x,y)
+# plt.scatter(x,y)
+# #plt.hist(arr,bins=75)
+# plt.show()
+#print(arr)
+# x=[21,23,34,45,56,65,77,88,99,12,24]
+# y=[1,2,4,8,16,32,64,128,256,512,1024]
+
+# model=np.poly1d(np.polyfit(x,y,2))
+# line=np.linspace(0,100,100)
+# plt.plot(line,model(line))
+# plt.scatter(x,y)
+# plt.show()
+# print(model)
+
+
