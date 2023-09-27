@@ -1,0 +1,16 @@
+import numpy as np
+arr=np.array(42)
+arr=np.array([1,2,3,4,5])
+arr=np.array([[1,2,3,4,5],[12,11,13,14,15]])
+arr=np.array([[[1,2,3,4,5],[12,11,13,14,15]],[[1,2,3,4,5],[12,11,13,14,15]]])
+
+
+print(arr.ndim)
+print(arr)
+
+#print(np.__version__)
+#print(arr.ndim)
+#print(type(arr))
+
+
+

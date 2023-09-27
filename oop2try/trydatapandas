@@ -1,0 +1,34 @@
+import pandas as pd
+t={"name":["A","B","C"],
+   "age":[1,2,3],
+    "job":["a","b","c"]
+}
+
+df=pd.DataFrame(t)
+print(df)
+"""training={
+    "name":["bench_press","squat","deadlift"],
+    "reps":[12,12,8],
+    "sets":[3,3,3]
+
+}
+
+#do=pd.Series(training,index=["name","reps","sets"])
+#print(do)
+#df=pd.read_csv('pro.csv')
+y=pd.DataFrame(training)
+y=pd.DataFrame(training,index=["name","reps","sets"])
+print(y.loc["reps"])
+x=pd.read_csv('pro.csv')
+print(x)
+print(x.loc["reps"])
+print(x.iloc[0])
+print(x.to_string())
+
+
+
+#x=pd.read_csv('pro.csv',dtype={"Year":int,"Industry_aggregation_NZSIOC":str,"Industry_code_NZSIOC":int,"Industry_name_NZSIOC":str,"Units":str,"Variable_code":str,"Variable_name":str,"Variable_category":str,"Value":str,"Industry_code_ANZSIC06":str})
+#print(x)"""
+
+
+
